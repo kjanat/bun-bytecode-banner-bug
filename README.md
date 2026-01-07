@@ -5,9 +5,25 @@ Bytecode builds with shebang silently fail to execute.
 ## Reproduce
 
 ```bash
-bun build.ts        # Build with bytecode
-bun index.ts        # Source works
-bun out/index.js    # Bytecode: no output, exits 0
+# Build with bytecode
+# equal to `bun build --outdir out --target bun --bytecode index-*.ts`
+bun run build
+
+# Source with shebang: works
+# equal to `bun index-shebang.ts`
+bun demo:source:shebang
+
+# Bytecode with shebang: no output, exits 0
+# equal to `bun out/index-shebang.js`
+bun demo:out:shebang
+
+# Source without shebang: works
+# equal to `bun index-no-shebang.ts`
+bun demo:source:noshebang
+
+# Bytecode without shebang: works
+# equal to `bun out/index-no-shebang.js`
+bun demo:out:noshebang
 ```
 
 ## Expected

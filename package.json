@@ -4,8 +4,12 @@
 	"repository": "github:kjanat/bun-bytecode-banner-bug",
 	"author": "Kaj Kowalski <dev@kajkowalski.nl> (https://github.com/kjanat)",
 	"type": "module",
-	"module": "index.ts",
 	"scripts": {
+		"build": "bun build.ts",
+		"demo:out:noshebang": "bun ./out/index-no-shebang.js",
+		"demo:out:shebang": "bun ./out/index-shebang.js",
+		"demo:source:noshebang": "bun index-no-shebang.ts",
+		"demo:source:shebang": "bun index-shebang.ts",
 		"fmt": "bunx dprint fmt"
 	},
 	"devDependencies": {
