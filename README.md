@@ -67,7 +67,8 @@ scanning for pragma after shebang.
 +        while (cursor < end) : (cursor += 1) {
 ```
 
-Proposed fix: https://github.com/kjanat/bun/tree/bytecode-banner-bug
+Proposed fix: <https://github.com/kjanat/bun/tree/bytecode-banner-bug>\
+PR: <https://github.com/oven-sh/bun/pull/25868>
 
 ## Workaround
 
