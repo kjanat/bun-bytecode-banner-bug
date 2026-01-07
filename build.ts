@@ -20,8 +20,8 @@ await $`rm -rf ${outdir}`;
 
 const result: BuildOutput = await Bun.build({
 	entrypoints: [
-		`${import.meta.dir}/src/index-no-shebang.ts`,
-		`${import.meta.dir}/src/index-shebang.ts`,
+		`${import.meta.dir}/src/no-shebang.ts`,
+		`${import.meta.dir}/src/shebang.ts`,
 	],
 	outdir: outdir,
 	target: "bun",
