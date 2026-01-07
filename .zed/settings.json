@@ -1,0 +1,1 @@
+{ "prettier": { "allowed": false }, "formatter": { "language_server": { "name": "dprint" } } }
