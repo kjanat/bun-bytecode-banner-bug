@@ -1,5 +1,8 @@
+// Suppress debug bun's syscall tracing output
+Bun.env.BUN_DEBUG_QUIET_LOGS = "1";
+
 import { $ } from "bun";
-import { beforeAll, describe, expect, test } from "bun:test";
+import { describe, expect, test } from "bun:test";
 import { resolve } from "path";
 
 const root = resolve(import.meta.dir, "..");
@@ -11,29 +14,25 @@ const outdir = resolve(root, "out");
 const bunExe = process.execPath;
 
 describe(`bun@${Bun.version}`, () => {
-	beforeAll(async () => {
-		await $`${bunExe} ${resolve(root, "build.ts")}`.quiet();
-	});
-
 	describe("source files", () => {
-		test("source without shebang produces output", async () => {
+		test.concurrent("source without shebang produces output", async () => {
 			const result = await $`${bunExe} ${srcdir}/no-shebang.ts`.text();
 			expect(result.trim()).toBe("Hello from bytecode!");
 		});
 
-		test("source with shebang produces output", async () => {
+		test.concurrent("source with shebang produces output", async () => {
 			const result = await $`${bunExe} ${srcdir}/shebang.ts`.text();
 			expect(result.trim()).toBe("Hello from bytecode!");
 		});
 	});
 
 	describe("bytecode output files", () => {
-		test("bytecode without shebang produces output", async () => {
+		test.concurrent("bytecode without shebang produces output", async () => {
 			const result = await $`${bunExe} ${outdir}/no-shebang.js`.text();
 			expect(result.trim()).toBe("Hello from bytecode!");
 		});
 
-		test("bytecode with shebang produces output", async () => {
+		test.concurrent("bytecode with shebang produces output", async () => {
 			// BUG in 1.3.5: Parser uses wrong end boundary when scanning for pragma after shebang
 			const result = await $`${bunExe} ${outdir}/shebang.js`.text();
 			expect(result.trim()).toBe("Hello from bytecode!");

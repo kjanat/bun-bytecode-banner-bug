@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "bun build.ts",
-    "fmt": "bunx dprint fmt"
+    "fmt": "bunx dprint fmt",
+    "test": "bun test"
   },
   "devDependencies": {
     "@types/bun": "latest"

@@ -1,1 +1,3 @@
-test.root = "test"
+[test]
+root = "test"
+preload = ["./build.ts"]
