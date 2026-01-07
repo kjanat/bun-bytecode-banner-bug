@@ -6,10 +6,6 @@
   "type": "module",
   "scripts": {
     "build": "bun build.ts",
-    "demo:out:noshebang": "bun ./out/no-shebang.js",
-    "demo:out:shebang": "bun ./out/shebang.js",
-    "demo:source:noshebang": "bun ./src/no-shebang.ts",
-    "demo:source:shebang": "bun ./src/shebang.ts",
     "fmt": "bunx dprint fmt"
   },
   "devDependencies": {
