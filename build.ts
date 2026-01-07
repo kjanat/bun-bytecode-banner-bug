@@ -14,14 +14,14 @@ if (Bun.semver.order(Bun.version, BUG_VERSION) > 0) {
 	);
 }
 
-const outdir = "./out";
+const outdir = `${import.meta.dir}/out`;
 
 await $`rm -rf ${outdir}`;
 
 const result: BuildOutput = await Bun.build({
 	entrypoints: [
-		"./index-shebang.ts",
-		"./index-no-shebang.ts",
+		`${import.meta.dir}/src/index-no-shebang.ts`,
+		`${import.meta.dir}/src/index-shebang.ts`,
 	],
 	outdir: outdir,
 	target: "bun",

@@ -1,25 +1,25 @@
 {
-	"name": "bun-bytecode-banner-bug",
-	"private": true,
-	"repository": "github:kjanat/bun-bytecode-banner-bug",
-	"author": "Kaj Kowalski <dev@kajkowalski.nl> (https://github.com/kjanat)",
-	"type": "module",
-	"scripts": {
-		"build": "bun build.ts",
-		"demo:out:noshebang": "bun ./out/index-no-shebang.js",
-		"demo:out:shebang": "bun ./out/index-shebang.js",
-		"demo:source:noshebang": "bun index-no-shebang.ts",
-		"demo:source:shebang": "bun index-shebang.ts",
-		"fmt": "bunx dprint fmt"
-	},
-	"devDependencies": {
-		"@types/bun": "latest"
-	},
-	"peerDependencies": {
-		"typescript": "^5"
-	},
-	"packageManager": "bun@1.3.5",
-	"engines": {
-		"bun": "1.3.5"
-	}
+  "name": "bun-bytecode-banner-bug",
+  "private": true,
+  "repository": "github:kjanat/bun-bytecode-banner-bug",
+  "author": "Kaj Kowalski <dev@kajkowalski.nl> (https://github.com/kjanat)",
+  "type": "module",
+  "scripts": {
+    "build": "bun build.ts",
+    "demo:out:noshebang": "bun ./out/index-no-shebang.js",
+    "demo:out:shebang": "bun ./out/index-shebang.js",
+    "demo:source:noshebang": "bun ./src/index-no-shebang.ts",
+    "demo:source:shebang": "bun ./src/index-shebang.ts",
+    "fmt": "bunx dprint fmt"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "packageManager": "bun@1.3.5",
+  "engines": {
+    "bun": "1.3.5"
+  }
 }
