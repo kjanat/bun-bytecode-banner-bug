@@ -1,6 +1,5 @@
 {
 	"useTabs": true,
-	"indentWidth": 80,
 	"typescript": {},
 	"json": {},
 	"markdown": {},
@@ -13,18 +12,16 @@
 		"commands": [
 			{
 				"command": "bunx sort-package-json --stdin",
-				"fileNames": [
-					"package.json",
-				],
+				"fileNames": ["package.json"],
 				"stdin": true,
 			},
 		],
 	},
 	"excludes": [
-		"**/node_modules",
-		"**/bun.lock",
-		"**/out",
-		"**/bun",
+		"node_modules",
+		"bun.lock",
+		"out",
+		"bun",
 	],
 	"plugins": [
 		"https://plugins.dprint.dev/typescript-0.95.13.wasm",

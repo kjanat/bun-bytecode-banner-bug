@@ -32,8 +32,10 @@ console.log(
 	"Built:",
 	result.outputs.map((
 		o,
-	) => relative(
-		process.cwd(),
-		o.path,
-	)).join(", "),
+	) =>
+		relative(
+			process.cwd(),
+			o.path,
+		)
+	).join(", "),
 );
